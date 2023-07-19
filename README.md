@@ -52,11 +52,41 @@ Python like all other programming languages supports datatypes
 
 some common ones are 
 
-- Integers and Floats
+- **Integers and Floats**
   - These act just like normal numbers.
   - You can perform all the normal numeric operations on them such as addition, multiplication division and subtraction etc.
   - Use `int()` or `float()` to explicitly turn something into a number.
   
-> 👍 Success
+> ⚠️ Warning
 > 
-> Vitae reprehenderit at aliquid error voluptates eum dignissimos.
+> If you try to turn anything other than a number into an int or float. You will cause an error.
+
+- **Strings**
+  - Strings can be thought of as characters or sentences.
+  - All variables that you want to store as strings must be enclosed with `""`.
+  - Adding strings with the `+` sign will actually stitch them together. For example: 
+  ```python
+  x = "hello"
+  y = "world"
+
+  x + y
+  ```
+  Will output `helloworld`. It's handy to keep this in mind when debugging your code.
+
+  # Comments.
+  If you want to write something in your document with it being ignored by Python simply type a `#` before the line. For example:
+  ```python
+  # This line will be ignored.
+  ```
+
+  ## Loops
+
+  There are many different ways to make loops in Python.
+  The ones you'll be using are `while` and `for` loops.
+
+  ### `while` loops
+  ```python
+  while True:
+    # Code you want to run
+  ```
+  This code will run forever until you manually stop it. So use it wisely.
