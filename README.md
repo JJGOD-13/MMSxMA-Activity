@@ -57,4 +57,6 @@ some common ones are
   - You can perform all the normal numeric operations on them such as addition, multiplication division and subtraction etc.
   - Use `int()` or `float()` to explicitly turn something into a number.
   
-<p class="callout warning"> WTF </p>
+> 👍 Success
+> 
+> Vitae reprehenderit at aliquid error voluptates eum dignissimos.
