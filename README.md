@@ -47,4 +47,14 @@ You can do this by going to the website and installing from there
  print("Hello World")
  ```
 
- 
+<br>
+Python like all other programming languages supports datatypes
+
+some common ones are 
+
+- Integers and Floats
+  - These act just like normal numbers.
+  - You can perform all the normal numeric operations on them such as addition, multiplication division and subtraction etc.
+  - Use `int()` or `float()` to explicitly turn something into a number.
+  
+<p class="callout warning"> WTF </p>
