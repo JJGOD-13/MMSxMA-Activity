@@ -4,8 +4,8 @@ from MMScar import *
 #============================
 @decoration
 def main():
-    pass # PUT YOUR CODE HERE
-
+    
+    move_forward(2, 100)
     
 
 
@@ -13,6 +13,10 @@ def main():
 
 if __name__ == "__main__":
 
+
+
+    while board.digital_read(buttonPin)[0] == 0:
+        time.sleep(0.001)
 
     main()
 

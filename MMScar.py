@@ -1,4 +1,4 @@
-import pymata4 
+from pymata4 import pymata4
 import time
 
 
@@ -29,16 +29,34 @@ buttonPin = 3
 # Set up all the pin modes
 # ===================================
 
-#TODO
+for pin in speedPins:
+    board.set_pin_mode_digital_output(pin)
+
+for pin in pwmPins:
+    board.set_pin_mode_pwm_output(pin)
+
+board.set_pin_mode_digital_input(buttonPin)
+
+
+
+# ===================================
+# Define all the functions
+# ===================================
 
 def speedconvert(speed):
     return int(speed*255/100)
 
 
-def move_forward(time, speed):
+def move_forward(Time, speed):
+    """
+    Moves the car forward.
+    time: how long to move forward in seconds
+    speed: how fast to move forward, 0-100
+
+    """
 
     # Validate input
-    if time < 0:
+    if Time < 0:
         raise ValueError("Time must be positive")
     if speed < 0 or speed > 100:
         raise ValueError("Speed must be between 0 and 100")
@@ -56,7 +74,7 @@ def move_forward(time, speed):
     board.pwm_write(5, speedconvert(speed))
 
     # Wait for the time
-    time.sleep(time)
+    time.sleep(Time)
 
     # Turn off the motors
     board.digital_write(6,0)
@@ -68,10 +86,10 @@ def move_forward(time, speed):
 
 
 
-def mover_backward(time, speed):
+def move_backward(Time, speed):
 
     # Validate input
-    if time < 0:
+    if Time < 0:
         raise ValueError("Time must be positive")
 
     if speed < 0 or speed > 100:
@@ -89,7 +107,7 @@ def mover_backward(time, speed):
     board.pwm_write(5, speedconvert(speed))
 
     # Wait for the time
-    time.sleep(time)
+    time.sleep(Time)
 
     # Turn off the motors
     board.digital_write(6,0)
@@ -100,10 +118,10 @@ def mover_backward(time, speed):
     board.pwm_write(5, 0)
 
 
-def turn_left(time, speed):
+def turn_left(Time, speed):
 
     # Validate input
-    if time < 0:
+    if Time < 0:
         raise ValueError("Time must be positive")
 
     if speed < 0 or speed > 100:
@@ -121,7 +139,7 @@ def turn_left(time, speed):
     board.pwm_write(5, speedconvert(speed))
 
     # Wait for the time
-    time.sleep(time)
+    time.sleep(Time)
 
     # Turn off the motors
     board.digital_write(6,0)
@@ -132,10 +150,10 @@ def turn_left(time, speed):
     board.pwm_write(5, 0)
 
 
-def turn_right(time, speed):
+def turn_right(Time, speed):
 
     # Validate input
-    if time < 0:
+    if Time < 0:
         raise ValueError("Time must be positive")
 
     if speed < 0 or speed > 100:
@@ -153,7 +171,7 @@ def turn_right(time, speed):
     board.pwm_write(5, speedconvert(speed))
 
     # Wait for the time
-    time.sleep(time)
+    time.sleep(Time)
 
     # Turn off the motors
     board.digital_write(6,0)
